@@ -47,6 +47,9 @@ class WolframAlphaResult(object):
         self.result = result
         self.result_raw = result_raw
         
+    def __repr__(self):
+        return '<WolframAlphaResult/%r>' % self.title
+        
 
 class WolframAlpha(object):
     def __init__(self, query, all=True):
@@ -100,7 +103,9 @@ class WolframAlpha(object):
             
             
 if __name__ == "__main__":
-    w = WolframAlpha("ibm apl", True)
+    w = WolframAlpha("new york", True)
+    from pprint import pprint
+    pprint(w.results)
     for result in w.results:
         print result.title
-        print result.result, '\n\n'
+        print repr(result.result_raw), '\n\n'
