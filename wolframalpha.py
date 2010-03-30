@@ -24,8 +24,9 @@ class TextTable(object):
         
     def _preformat(self):
         #Handle multiple calendars
-        if 'Su | Mo | Tu | We | Th | Fr | Sa' in self.plaintext:
-            cals = self.plaintext.split('Su | Mo | Tu | We | Th | Fr | Sa')
+        calheader = 'Su | Mo | Tu | We | Th | Fr | Sa'
+        if calheader in self.plaintext:
+            cals = self.plaintext.split(calheader)
             ret = []
             for cal in cals:
                 table = [row.split('|') for row in cal.strip('\n').split('\n')]
@@ -37,6 +38,9 @@ class TextTable(object):
                 ret.append('\n'.join('|'.join(row) for row in table))
                 if month:
                     ret.append(month.strip())
+                    ret.append(calheader)
+                if len(table) == 1:
+                    ret.append(calheader)
             self._format('\n'.join(ret))
             return True
                 
