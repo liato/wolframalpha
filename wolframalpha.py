@@ -128,7 +128,10 @@ class WolframAlpha(object):
             title = pod.cssselect('h2')
             if len(title) > 0:
                 title = title[0].text_content()[:-1]
-                text_raw = pod.cssselect('img')[0].get('alt')
+                text_raw = []
+                for img in pod.cssselect('img'):
+                    text_raw.append(img.get('alt'))
+                text_raw = '\n\n'.join(text_raw)
                 text = text_raw.replace("\\n","\n").replace("\\'s","'s")
                 text = re.split(r'\n{2,}',text)
                 output = []
@@ -145,7 +148,7 @@ class WolframAlpha(object):
             
             
 if __name__ == "__main__":
-    w = WolframAlpha("ibm apl", True)
+    w = WolframAlpha("days til 2010-04-08", True)
     from pprint import pprint
     pprint(w.results)
     for result in w.results:
