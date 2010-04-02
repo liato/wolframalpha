@@ -95,12 +95,11 @@ class WolframAlphaResult(object):
         
 
 class WolframAlpha(object):
-    baseurl = 'http://www88.wolframalpha.com/input/'
+    baseurl = 'http://m.wolframalpha.com/input/'
 
-    def __init__(self, query, all=True):
+    def __init__(self, query):
         self.query = query
         self.results = []
-        self.all = all
         self.update()
     
     def update(self):
@@ -108,24 +107,7 @@ class WolframAlpha(object):
         opener.addheaders = [('User-agent', 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.0.2) Gecko/2008091620 Firefox/3.0.2'),
                            ('Connection', 'Keep-Alive'),
                            ('Content-Type', 'application/x-www-form-urlencoded')]
-        data = opener.open(self.baseurl+"?i="+urllib2.quote(self.query.encode('utf-8'))+"&asynchronous=%s&equal=Submit" % ('pod' if self.all else 'false')).read()
-        data = data.replace('</body>', '').replace('</html>', '')
-        if self.all:
-            recalcurl = re.search("'(recalculate.jsp\?id=[^']*?)'", data, re.I)
-            if recalcurl:
-                recalcdata = opener.open(self.baseurl+recalcurl.group(1)).read()
-            else:
-                recalcdata = ""
-            podurls = re.findall("'(pod.jsp\?id=[^']*?)'", data+recalcdata, re.I)
-            if podurls:
-                for url in podurls:
-                    try:
-                        poddata = str(opener.open(self.baseurl+str(url)).read())
-                        data=data+poddata
-                    except urllib2.HTTPError:
-                        pass
-        
-        data = data + '</body></html>'
+        data = opener.open(self.baseurl+"?i="+urllib2.quote(self.query.encode('utf-8'))+"&equal=Submit").read()
         data = document_fromstring(data)
         pods = data.cssselect('div.pod')
         for pod in pods:
@@ -152,7 +134,7 @@ class WolframAlpha(object):
             
             
 if __name__ == "__main__":
-    w = WolframAlpha("days til 2010-04-08", True)
+    w = WolframAlpha("ibm apple")
     from pprint import pprint
     pprint(w.results)
     for result in w.results:
