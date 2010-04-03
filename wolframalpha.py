@@ -60,28 +60,30 @@ class TextTable(object):
             
         table = [[col.strip() for col in line.split('|', columns-1)] for line in lines]
 
-        try:
-            lens = [max(len(row[col]) for row in table if len(row) > 1)+2 for col in range(columns)]
-        except IndexError:
-            return
-        
-        ret = []
-        if len(table[0]) == 1:
-            ret.append('┌%s┐' % ('─'*(sum(lens) + columns-1)))
-        else:
-            ret.append('┌%s┐' % '┬'.join(l*'─' for l in lens)) 
-        for ri, row in enumerate(table):
-            if len(row) == 1:
-                ret.append('│%s│' % self._center(row[0], sum(lens) + columns-1))
-                ret.append('├%s┤' % '┬'.join(l*'─' for l in lens))            
-            else:
-                ret.append('│%s│' % '│'.join(self._center(e,lens[i]) for i,e in enumerate(row)))
-            if ri+1 < len(table) and len(table[ri+1]) == 1:
-                ret.append('├%s┤' % '┴'.join(l*'─' for l in lens))
-        ret.append('└%s┘' % '┴'.join(l*'─' for l in lens)) 
-                
-        self.formated = '\n'.join(ret)
+        if columns > 1:
+            try:
+                lens = [max(len(row[col]) for row in table if len(row) > 1)+2 for col in range(columns)]
+            except IndexError:
+                return
 
+            ret = []
+            if len(table[0]) == 1:
+                ret.append('┌%s┐' % ('─'*(sum(lens) + columns-1)))
+            else:
+                ret.append('┌%s┐' % '┬'.join(l*'─' for l in lens)) 
+            for ri, row in enumerate(table):
+                if len(row) == 1:
+                    ret.append('│%s│' % self._center(row[0], sum(lens) + columns-1))
+                    ret.append('├%s┤' % '┬'.join(l*'─' for l in lens))            
+                else:
+                    ret.append('│%s│' % '│'.join(self._center(e,lens[i]) for i,e in enumerate(row)))
+                if ri+1 < len(table) and len(table[ri+1]) == 1:
+                    ret.append('├%s┤' % '┴'.join(l*'─' for l in lens))
+            ret.append('└%s┘' % '┴'.join(l*'─' for l in lens)) 
+                    
+            self.formated = '\n'.join(ret)
+        else:
+            self.formated = '\n'.join(lines)
 
     
 class WolframAlphaResult(object):
@@ -134,7 +136,7 @@ class WolframAlpha(object):
             
             
 if __name__ == "__main__":
-    w = WolframAlpha("ibm apple")
+    w = WolframAlpha("time in cest")
     from pprint import pprint
     pprint(w.results)
     for result in w.results:
