@@ -5,7 +5,7 @@ import urllib2
 
 from lxml.html import document_fromstring, tostring
 
-__version__ = '0.1.0'
+__version__ = '0.1.1'
 
     
 class TextTable(object):
