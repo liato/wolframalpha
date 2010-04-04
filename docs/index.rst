@@ -49,39 +49,56 @@ A short example of retrieving and printing out information with wolframalpha::
 
 And the result::
     
+    Found 10 result sets:
     Input interpretation
-    New York,United States 
-    
+    New York 
     
     Populations
-        city population    | 8.364 million people  (2008 estimate) (country rank: 1st) 
-     urban area population |           17.8 million people  (2000 estimate)            
-     metro area population |           19.01 million people  (2008 estimate)            
-    
+    ┌───────────────────────┬───────────────────────────────────────────────────────────┐
+    │    city population    │ 8.364 million people  (2008 estimate) (country rank: 1st) │
+    │ urban area population │ 17.8 million people  (2000 estimate) (country rank: 1st)  │
+    │ metro area population │ 19.01 million people  (2008 estimate) (country rank: 1st) │
+    └───────────────────────┴───────────────────────────────────────────────────────────┘ 
     
     Current local time
-    7:03 pm EDT  |  Saturday, March 27, 2010 
-    
+    11:18 pm EDT  |  Saturday, April 3, 2010 
     
     Current weather
-    3 deg C  (wind chill: -1 deg C)  |  relative humidity: 41%  |  wind: 5 m/s  |  overcast 
+    48 deg F  (wind chill: 45 deg F)  |  relative humidity: 87%  |  wind: 8 mph  |  fog, overcast 
     
+    Economic properties
+    ┌────────────────────┬────────────────────────────────────────────┐
+    │   cost of living   │       118%  above  national average        │
+    │ median home prices │ $ 437600  (-11.47% from last year)  (2009) │
+    │ unemployment rate  │           10.4%  (December 2009)           │
+    │   city sales tax   │                   4.875%                   │
+    └────────────────────┴────────────────────────────────────────────┘ 
     
-    Approximate elevation
-    10 m 
+    Other indicators
+    ┌──────────────────────────────┬───────────────────────────────────────────────────────────────────┐
+    │ total rate of violent crime  │ 580.3 crimes/100000 persons/yr  (1.28 x national average)  (2008) │
+    │ total rate of property crime │ 1797 crimes/100000 persons/yr  (0.56 x national average)  (2008)  │
+    │ average daily traffic delay  │                            7.6 min/day                            │
+    └──────────────────────────────┴───────────────────────────────────────────────────────────────────┘ 
     
+    Geographic properties
+    ┌────────────────────┬───────────────────┐
+    │     elevation      │       33 ft       │
+    │        area        │    303.3 mi^2     │
+    │ population density │ 27575 people/mi^2 │
+    └────────────────────┴───────────────────┘ 
     
     Nearby cities
-      Jersey City,New Jersey   |    13 km  (kilometers) west    |    241114 people     
-         Newark,New Jersey     |    23 km  (kilometers) west    |    278980 people     
-        Hempstead,New York     |    25 km  (kilometers) east    |    751276 people     
-        Brookhaven,New York    |    82 km  (kilometers) east    |    472122 people     
-     Philadelphia,Pennsylvania | 130 km  (kilometers) southwest | 1.447 million people  
-    
+    ┌───────────────────────────┬────────────────────┬──────────────────────┐
+    │  Jersey City,New Jersey   │    8 miles west    │    241114 people     │
+    │     Newark,New Jersey     │   14 miles west    │    278980 people     │
+    │    Hempstead,New York     │   16 miles east    │    751276 people     │
+    │    Brookhaven,New York    │   51 miles east    │    472122 people     │
+    │ Philadelphia,Pennsylvania │ 81 miles southwest │ 1.447 million people │
+    └───────────────────────────┴────────────────────┴──────────────────────┘ 
     
     Counties
     Kings County, New York  (30.8%  of city population)  |  Queens County, New York  (27.8%  of city population)  |  New York County, New York  (19.2%  of city population)  |  Bronx County, New York  (16.6%  of city population)  |  Richmond County, New York  (5.5%  of city population) 
-    
     
     Nicknames
     The Big Apple  |  The Concrete Jungle  |  The City That Never Sleeps  |  The Capital of the World  |  The Empire City  |  The City So Nice They Named It Twice  |  The City 

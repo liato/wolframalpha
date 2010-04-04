@@ -142,3 +142,10 @@ if __name__ == "__main__":
     for result in w.results:
         print result.title
         print result.result, '\n\n'
+        
+        
+    query = WolframAlpha('New York')
+    print 'Found %d result sets:' % len(query.results)
+    for rs in query.results:
+        print rs.title
+        print rs.result, '\n'
