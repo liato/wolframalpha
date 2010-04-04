@@ -37,7 +37,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'wolframalpha-api'
+project = u'wolframalpha'
 copyright = u'2010, liato'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -158,7 +158,7 @@ html_static_path = ['_static']
 #html_file_suffix = ''
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'wolframalpha-apidoc'
+htmlhelp_basename = 'wolframalphadoc'
 
 
 # -- Options for LaTeX output --------------------------------------------------
@@ -172,7 +172,7 @@ htmlhelp_basename = 'wolframalpha-apidoc'
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'wolframalpha-api.tex', u'wolframalpha-api Documentation',
+  ('index', 'wolframalpha.tex', u'wolframalpha Documentation',
    u'liato', 'manual'),
 ]
 

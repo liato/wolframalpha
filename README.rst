@@ -1,5 +1,5 @@
-wolframalpha-api --- A python interface to WolframAlpha
-=======================================================
+wolframalpha --- A python interface to WolframAlpha
+===================================================
 
 
 Retrieve text results from the computational knowledge engine
@@ -11,19 +11,19 @@ Installation and requirements
 
 Make sure you have a working Python installation (>= 2.5) and that
 `lxml <http://codespeak.net/lxml/>`_ is installed. Download the latest version
-of wolframalpha-api from `GitHub <http://github.com/liato/wolframalpha-api>`_ or
+of wolframalpha from `GitHub <http://github.com/liato/wolframalpha>`_ or
 clone it using git.::
 
-    git clone git://github.com/liato/wolframalpha-api.git
-    cd wolframalpha-api
+    git clone git://github.com/liato/wolframalpha.git
+    cd wolframalpha
     python setup.py install
 
 
 Usage
 -----
 
-Take a look at `the docs <http://docs.x00.us/wolframalpha-api/>`_ for information
-about how to use wolframalpha-api.
+Take a look at `the docs <http://docs.x00.us/wolframalpha/>`_ for information
+about how to use wolframalpha.
 
 
 License

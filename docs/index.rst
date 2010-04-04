@@ -1,7 +1,7 @@
-:mod:`wolframalpha-api` --- A python interface to WolframAlpha
-==============================================================
+:mod:`wolframalpha` --- A python interface to WolframAlpha
+==========================================================
 
-..  module:: wolframalpha-api
+..  module:: wolframalpha
     :synopsis: A python interface to WolframAlpha.
 
 
@@ -19,28 +19,28 @@ Installation and requirements
 
 Make sure you have a working Python installation (>= 2.5) and that
 `lxml <http://codespeak.net/lxml/>`_ is installed. Download the latest version
-of wolframalpha-api from `GitHub <http://github.com/liato/wolframalpha-api>`_ or
+of wolframalpha from `GitHub <http://github.com/liato/wolframalpha>`_ or
 clone it using git.::
 
-    git clone git://github.com/liato/wolframalpha-api.git
-    cd wolframalpha-api
+    git clone git://github.com/liato/wolframalpha.git
+    cd wolframalpha
     python setup.py install
 
 
 Usage
 -----
 
-The following classes are available in the wolframalpha-api library.
+The following classes are available in the wolframalpha library.
 
 * :class:`WolframAlpha` --- Query `WolframAlpha <http://www.wolframalpha.com/>`__ and return all non graphical results.
 * :class:`WolframAlphaResult` --- Contains the retrieved information.
 
 
-A short example of retrieving and printing out information with wolframalpha-api::
+A short example of retrieving and printing out information with wolframalpha::
     
-    import wolframalpha-api
+    import wolframalpha
     
-    query = wolframalpha-api.WolframAlpha('New York')
+    query = wolframalpha.WolframAlpha('New York')
     print 'Found %d result sets:' % len(query.results)
     for rs in query.results:
         print rs.title

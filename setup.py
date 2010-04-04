@@ -4,12 +4,12 @@ try:
 except ImportError: 
     from distutils.core import setup 
 
-setup(name='wolframalpha-api',
+setup(name='wolframalpha',
       author='liato',
       author_email='x@x00.us',
-      url='http://github.com/liato/wolframalpha-api',
+      url='http://github.com/liato/wolframalpha',
       license='MIT',
-      version=0.1.1,
+      version='0.1.0',
       description="A python interface to WolframAlpha.",
       long_description="A python interface to WolframAlpha.",
       classifiers=[
@@ -24,5 +24,5 @@ setup(name='wolframalpha-api',
         'Topic :: Software Development :: Libraries :: Python Modules',
       ],
       keywords='wolframalpha wolfram alpha scraping mathematica database',
-      py_modules=['wolframalpha-api'],
+      py_modules=['wolframalpha'],
       install_requires=['lxml'])
